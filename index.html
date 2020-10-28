@@ -2,14 +2,29 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="main.js"></script>
+    <title>Pig Latin Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="main.js" defer></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
-    <hr/>
+    <div class="app-container">
+      <h1>Pig Latin Generator</h1>
+      <p>Enter a word or sentence to translate</p>
+      <input type="text" name="toTranslate" id="toTranslate">
+      <button id="sumbitButton"  onclick="translateText()">Translate</button>
+      <div class="pigbox"> 
+        <div id="wordBubble">
+          <img src="./pigTalk2.ai_bubble.svg" alt="speach bubble">
+          <p id="pigTalk">Pig Latin Goes Here</p>
+        </div>
+      </div>
+
+
+
+
+    </div>
+    
   </body>
 </html>
