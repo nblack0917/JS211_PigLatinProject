@@ -12,11 +12,31 @@ const rl = readline.createInterface({
 
 
 const pigLatin = (word) => {
-
-  // Your code here
-
+  let trimWord = word.trim().toLowerCase();
+  let firstLetters = [];
+  let wordEnd = "ay"
+  let newWord = [];
+  for (let i = 0; i < trimWord.length; i++) {
+  if (trimWord[0] == "a" || trimWord[0] == "e" || trimWord[0] == "i" || trimWord[0] == "o" || trimWord[0] == "u") {
+    newWord.push(trimWord.substring(i, trimWord.length))
+    newWord = newWord.concat("y", wordEnd)
+    return newWord.join('')
+    } else if (trimWord[i] == "a" || trimWord[i] == "e" || trimWord[i] == "i" || trimWord[i] == "o" || trimWord[i] == "u") {
+      newWord.push(trimWord.substring(i, trimWord.length))
+      newWord = newWord.concat(firstLetters, wordEnd)
+      return newWord.join('') 
+      } else {
+          firstLetters.push(trimWord[i])
+        }
+  }
 }
 
+
+
+pigLatin('car') //=> 'arcay'
+pigLatin('create') //=> 'eatecray'
+pigLatin('pony') //=> 'onypay'
+pigLatin('egg') //=> 'eggyay'
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
 // to close it ctrl + C
@@ -26,6 +46,7 @@ const getPrompt = () => {
     getPrompt();
   });
 }
+
 
 // Unit Tests
 // You use them run the command: npm test main.js
