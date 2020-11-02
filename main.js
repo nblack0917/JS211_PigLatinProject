@@ -67,6 +67,12 @@ const translateText = () => {
   }, 6000)
 }
 
+let input = document.getElementById("toTranslate")
+input.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    translateText();
+  }
+});
 
 // pigLatin('car') //=> 'arcay'
 // pigLatin('create') //=> 'eatecray'
